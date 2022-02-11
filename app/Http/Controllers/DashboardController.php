@@ -18,7 +18,7 @@ class DashboardController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -47,9 +47,7 @@ class DashboardController extends Controller
 
     public function home()
     {
-        return view('welcome', [
-            'user' => User::find(Auth::user()->id)
-        ]);
+        return view('welcome');
     }
 
     public function showDashboard()
