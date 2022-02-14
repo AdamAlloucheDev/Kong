@@ -20,9 +20,8 @@ Route::get('/user', function () {
     return view('user');
 });
 Route::post('/posts/{post}/like', [App\Http\Controllers\PostController::class, 'like'])->name('posts.like');
+Route::post('/photos/{photo}/like', [App\Http\Controllers\PhotoController::class, 'like'])->name('photos.like');
 Route::get('/user-info/{id}', '\App\Http\Controllers\DashboardController@showUser')->middleware(['auth'])->name('user-info');
-// Route::post('/user', '\App\Http\Controllers\DashboardController@editUser');
-// Route::get('/user/delete/{id}', '\App\Http\Controllers\DashboardController@delete')->middleware(['auth']);
 
 Route::get('/timeline', '\App\Http\Controllers\DashboardController@index')->name('timeline');
 Route::post('/comments', '\App\Http\Controllers\CommentController@store')->name('comments.store');

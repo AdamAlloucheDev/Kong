@@ -1,6 +1,13 @@
+
+            
 <div data-aos="fade-left" data-aos-duration="1500" class="block p-4 mt-4 bg-white border border-gray-100 shadow-sm rounded-xl" >
   <a href="{{ url('/user-info/'.$post->user->id) }}" class=" font-medium text-blue-500">{{ $post->user->firstname}} </a>
   <p class="text-xs font-medium text-slate-500">{{$post->created_at->diffForHumans()}}</p>
+<br>
+  @if ($post->photo)
+    <img src="{{ $post->photo->url }}" alt="" class="img-fluid">
+  @endif
+<br>
   <h5 class="mt-1 text-xl font-bold text-gray-900">
     {{ $post->body}}
   </h5>
@@ -62,8 +69,8 @@
         <dl class=" mt-6">
       
           <div class="">
-            <dd class="text-xs text-gray-500">{{$comment->created_at->diffForHumans()}}</dd>
             <dt class="text-sm font-medium text-gray-600">Publié</dt>
+            <dd class="text-xs text-gray-500">{{$comment->created_at->diffForHumans()}}</dd>
           </div>
         </dl>
       </span>
@@ -90,6 +97,8 @@
         </form>
       </div>
     </span>
+    
+          
 </div>
 
 

@@ -32,4 +32,9 @@ class Post extends Model
         return $this->likes()->where('user_id', Auth::user()->id)->count();
     }
 
+    public function photo()
+    {
+        return $this->hasOne(\App\Models\Photo::class);
+    }
+
 }

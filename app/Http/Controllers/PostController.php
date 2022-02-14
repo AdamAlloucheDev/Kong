@@ -10,7 +10,7 @@ class PostController extends Controller
     public function like(Request $request, Post $post)
     {
         if ($post->hasLiked()) {
-            return redirect()->back()->withError('Tu as déjà liké mon fréro');
+            return redirect()->back()->withError('Tu as déjà liké');
         }
 
         $post->likes()->create([
